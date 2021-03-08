@@ -4,8 +4,12 @@ from io import BytesIO
 
 def deepfry(imageURL):
     # Import Image from passed URL
-    response = requests.get(imageURL)
-    img = Image.open(BytesIO(response.content))                                                                 
+    try:
+        response = requests.get(imageURL)
+        img = Image.open(BytesIO(response.content))                                                                 
+    except:
+        print("error parsing link")
+        return
 
     # Saturation
     enhancer = ImageEnhance.Color(img)
@@ -23,6 +27,5 @@ def deepfry(imageURL):
     #res.save('result.png')
     return res
 
-
-
-deepfry("https://www.salton.com/wp-content/uploads/2016/04/DF1233_2-1.jpg")
+## Example of calling this function
+#deepfry("https://www.salton.com/wp-content/uploads/2016/04/DF1233_2-1.jpg")
