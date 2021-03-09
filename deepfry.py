@@ -2,7 +2,7 @@ from PIL import Image, ImageEnhance
 import requests
 from io import BytesIO                                                              
 
-def deepfry(imageURL):
+def deepFryImage(imageURL):
     # Import Image from passed URL
     try:
         response = requests.get(imageURL)
