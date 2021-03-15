@@ -12,8 +12,8 @@ def deepFryImage(imageURL):
         return
 
     # Saturation
-    enhancer = ImageEnhance.Color(img)
-    res = enhancer.enhance(2.0)    
+    #enhancer = ImageEnhance.Color(img)
+    #res = enhancer.enhance(2.0)    
 
     # Sharpen 
     enhancer = ImageEnhance.Sharpness(img)
@@ -28,4 +28,4 @@ def deepFryImage(imageURL):
     return res
 
 ## Example of calling this function
-#deepfry("https://www.salton.com/wp-content/uploads/2016/04/DF1233_2-1.jpg")
+#deepFryImage("https://www.salton.com/wp-content/uploads/2016/04/DF1233_2-1.jpg")
