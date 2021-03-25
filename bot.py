@@ -15,7 +15,7 @@ async def on_ready():
     print(f'{client.user} has connected to Discord!')
 
 @client.command(name='deepfry', pass_context=True)
-async def deepfrycommand(context, arg):
+async def deepfryCommand(context, arg):
     print(arg)
     #Converts our image object to Bytes to discord file
     with BytesIO() as image_binary:
@@ -30,7 +30,7 @@ async def deepfrycommand(context, arg):
         ## else deepfry previous image
 
 @client.command(name='bottomtext', pass_context=True)
-async def bottomtext(context, arg):
+async def bottomtextCommand(context, arg):
     print(arg)
     #Converts our image object to Bytes to discord file
     with BytesIO() as image_binary:
@@ -45,7 +45,7 @@ async def bottomtext(context, arg):
         ## else deepfry previous image
 
 @client.command(name='meme', pass_context=True)
-async def meme(context, arg):
+async def memeCommand(context, arg):
     print(arg)
     #Converts our image object to Bytes to discord file
     with BytesIO() as image_binary:
