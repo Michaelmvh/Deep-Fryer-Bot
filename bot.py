@@ -34,7 +34,7 @@ async def bottomtextCommand(context, arg):
     print(arg)
     #Converts our image object to Bytes to discord file
     with BytesIO() as image_binary:
-        bottomtext(arg).save(image_binary, 'PNG')
+        bottomTextImage(arg).save(image_binary, 'PNG')
         image_binary.seek(0)
         await context.send(file=discord.File(fp=image_binary, filename='deepfried.png'))
 
