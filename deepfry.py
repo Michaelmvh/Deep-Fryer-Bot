@@ -67,4 +67,4 @@ def memeImage(img):
     return bottomTextImage(deepFryImage(img))
 
 ## Example of calling this function
-memeImage("https://cdn.discordapp.com/attachments/589552727399464960/824723149097795624/ExRXmrbXMAIQ6Nm.jpg").save('result.png')
+#memeImage("https://www.salton.com/wp-content/uploads/2016/04/DF1233_2-1.jpg").save('result.png')
