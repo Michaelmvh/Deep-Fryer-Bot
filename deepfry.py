@@ -42,15 +42,24 @@ def bottomTextImage(img):
     text = "Bottom Text"
     font = ImageFont.truetype(
         font="unicode.impact.ttf",
-        size=350,
         encoding='unic')
     draw = ImageDraw.Draw(img)
-    w, h = draw.textsize(text, font=font)
 
     stroke_color = (0, 0, 0)
     fill_color = (255, 255, 255)
 
-    draw.text(((W-w)/2, int((H-h)*.99)), text, font=font, fill=fill_color, stroke_width=2, stroke_fill=stroke_color)
+    fontsize = 1  # starting font size
+
+    # portion of image width you want text width to be
+    img_fraction = 0.90
+
+    font = ImageFont.truetype("unicode.impact.ttf", fontsize)
+    while font.getsize(text)[0] < img_fraction*W:
+        # iterate until the text size is just larger than the criteria
+        fontsize += 10
+        font = ImageFont.truetype("unicode.impact.ttf", fontsize)
+
+    draw.text((W*.025, (H-fontsize)*1.05), text, font=font, fill=fill_color, stroke_width=2, stroke_fill=stroke_color)
     return img
 
 def memeImage(img):
@@ -58,4 +67,4 @@ def memeImage(img):
     return bottomTextImage(deepFryImage(img))
 
 ## Example of calling this function
-#memeImage("https://www.salton.com/wp-content/uploads/2016/04/DF1233_2-1.jpg").save('result.png')
+memeImage("https://cdn.discordapp.com/attachments/589552727399464960/824723149097795624/ExRXmrbXMAIQ6Nm.jpg").save('result.png')
